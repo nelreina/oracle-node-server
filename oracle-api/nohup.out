@@ -1,0 +1,14 @@
+[14:18:58] Using gulpfile /vagrant/oracle-api/gulpfile.js
+[14:18:58] Starting 'nodemon'...
+[14:18:58] Finished 'nodemon' after 1.17 ms
+[14:18:58] Starting 'default'...
+[14:18:58] Finished 'default' after 47 μs
+[14:18:58] [nodemon] v1.4.0
+[14:18:58] [nodemon] to restart at any time, enter `rs`
+[14:18:58] [nodemon] watching: *.*
+[14:18:58] [nodemon] starting `node index.js`
+events.js:85
+      throw er; // Unhandled 'error' event
+            ^
+Error: EBADF, read
+    at Error (native)

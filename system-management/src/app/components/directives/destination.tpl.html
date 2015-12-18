@@ -1,0 +1,15 @@
+<span ng-switch="vm.type">
+   <span ng-switch-when="DI">
+     <i class="fa fa-folder"></i>
+     <a href="file:'{{vm.fileName}}'">{{vm.name}}/{{vm.fileName}}</a>
+   </span>
+<span ng-switch-when="PR" class="text-uppercase"><i class="fa fa-print"></i> {{vm.name}}</span>
+<span ng-switch-when="AMQ"><i class="fa fa-database"></i> {{vm.name}}</span>
+<span ng-switch-when="EM">
+     <i class="fa fa-envelope"></i>
+     <a href="mailto:{{vm.name}}">{{vm.name}}</a>
+   </span>
+<span ng-switch-default="">
+     <i class="fa fa-exchange"></i> Export
+   </span>
+</span>

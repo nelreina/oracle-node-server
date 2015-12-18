@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+  <div>
+    <acme-navbar creationDate="main.creationDate" />
+  </div>
+
+  <h3 class="text-center">TTS Output Documents</h3>
+  <div class="row">
+    <form ng-submit="doc.search()">
+
+      <div class="col-sm-1">
+        <input type="text"
+               ng-model="doc.query.main_doc_registration_nr"
+               ng-minlength="7"
+               class="form-control input-sm" placeholder="Main Doc Reg Nr"/>
+      </div>
+      <div class="col-sm-1">
+        <input type="text"
+               ng-model="doc.query.user_id"
+               class="form-control input-sm text-uppercase"
+               ng-disabled="doc.searchDocReg()"
+               placeholder="User ID"/>
+      </div>
+      <div class="col-sm-2">
+        <select ng-model="doc.query.timeVal" class="form-control input-sm">
+          <option value="15min">Last 15 min</option>
+          <option value="30min">Last 30 min</option>
+          <option value="1hour">Last  hour</option>
+          <option value="today">Last 24 Hours</option>
+          <option value="1week">One Week</option>
+          <option value="2weeks">Two Weeks</option>
+          <option value="1month">One Month</option>
+          <option value="2months">Two Months</option>
+          <option value="3months">Three Month</option>
+        </select>
+
+      </div>
+      <div class="col-sm-2">
+        <select ng-model="doc.query.process_status" class="form-control input-sm">
+          <option value="">All</option>
+          <option value="00">New</option>
+          <option value="10">In Progress</option>
+          <option value="30">Error</option>
+          <option value="99">Completed</option>
+        </select>
+
+      </div>
+      <button class=" btn btn-primary btn-sm">Search</button>
+    </form>
+  </div>
+  <hr/>
+  <div>
+    <h4>Total Count: {{doc.tolalCount}} </h4>
+  </div>
+  <div ag-grid="doc.gridOptions" class="ag-fresh" style="width: 100%; height: 75vh;"></div>
+
+</div>

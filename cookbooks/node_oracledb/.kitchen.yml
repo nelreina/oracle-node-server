@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  http_proxy: http://192.168.201.6:8080
+  https_proxy: http://192.168.201.6:8080
+
+platforms:
+  - name:  ubuntu/trusty32
+
+suites:
+  - name: default
+    run_list:
+      - recipe[node_oracledb::default]
+    attributes:

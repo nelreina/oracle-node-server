@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div>
+        <acme-navbar creationDate="main.creationDate" />
+    </div>
+    <h3 class="text-center">TTS Lite</h3>
+    <div class="col-sm-8">
+        <h4>Pending Jobs
+         <button ng-click="ttsl.refresh()" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i></button>
+         </h4>
+        <div ag-grid="ttsl.logOptions" class="ag-fresh" style="width: 100%; height: 75vh;"></div>
+        <!-- <pre>{{ttsl.log | json}}</pre> -->
+    </div>
+    <div class="col-sm-4">
+        <!-- <pre>{{ttsl.pending | json}}</pre> -->
+        <h4>Mail Status
+        </h4>
+        
+    </div>
+</div>

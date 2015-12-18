@@ -1,0 +1,13 @@
+<div>
+    <span ng-switch="vm.status">
+      <!-- Error Icon -->
+      <span ng-switch-when="failure"   class="glyphicon glyphicon-remove-sign error"></span>
+      <span ng-switch-when="30"        class="glyphicon glyphicon-remove-sign error"></span>
+      
+      <!-- Success Icon -->
+      <span ng-switch-when="success"   class="glyphicon glyphicon-ok ok"></span>
+      <span ng-switch-when="99"        class="glyphicon glyphicon-ok ok"></span>
+      
+      <span ng-switch-default><i class="fa fa-spinner fa-pulse"></i> </span>
+    </span>
+</div>

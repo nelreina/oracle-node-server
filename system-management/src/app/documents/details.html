@@ -1,0 +1,60 @@
+<div ng-if="details.data" class="document-details">
+
+
+  <div class="modal-header">
+    <h4 class="text-center">{{details.title}} </h4>
+    <p class="text-center"><a href="mailto:{{details.email}}">{{details.email}}</a></p>
+  </div>
+  <div class="modal-body">
+
+    <table class="table">
+      <tr>
+        <th>Redo</th>
+        <th></th>
+        <th>Document</th>
+        <th>Destination</th>
+        <th>Executed At</th>
+      </tr>
+      <tr ng-repeat="doc in details.data track by $index">
+        <td>
+          <!--<div class="checkbox">-->
+            <input type="checkbox" id="checkbox" ng-model="doc.redo" ng-change="details.getMetaNrs()" />
+          <!--</div>-->
+        </td>
+        <td>
+          <status-icon class="ag-fresh" status="{{doc.processStatus}}" ></status-icon>
+        </td>
+        <td>
+          {{doc.id}}
+        </td>
+        <td>
+          <destination name="{{doc.destination}}" type="{{doc.destinationType}}" file-name="{{doc.outputName}}"></destination>
+        </td>
+        <td>
+          {{doc.dateUpdate | date:'dd-MM-yy HH:mm'}}
+        </td>
+      </tr>
+    </table>
+
+  </div>
+  <div class="modal-footer">
+    <show-image size="md"
+                id="{{details.id}}"
+                document-nr="{{details.documentNr}}"
+                transaction-nr="{{details.transactionNr}}">
+
+    </show-image>
+
+    <button ng-if="details.redoDocs"
+            class="btn btn-primary btn-md"
+            ng-click="details.repossessedDocs()">
+      REDO
+    </button>
+  </div>
+</div>
+<div ng-if="!details.data">
+  <div class="modal-body">
+    <h1 class="text-center"><i class="fa fa-spinner fa-spin"></i></h1>
+
+  </div>
+ </div>
